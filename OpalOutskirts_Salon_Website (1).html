@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opal Outskirts Salon — Salmon, Idaho</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#2D7D7D;
+  --teal2:#3A9A9A;
+  --sand:#C8A96E;
+  --blush:#F2E8E0;
+  --cream:#FDFAF7;
+  --dark:#1A1A1A;
+  --text:#2A2A2A;
+  --muted:#888;
+  --serif:'Playfair Display',serif;
+  --sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,247,.97);backdrop-filter:blur(12px);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(45,125,125,.15)}
+.nav-logo{font-family:var(--serif);font-size:18px;color:var(--teal);text-decoration:none;font-style:italic}
+.nav-logo small{display:block;font-size:8px;letter-spacing:3px;color:var(--muted);font-family:var(--sans);font-style:normal;font-weight:500;text-transform:uppercase;margin-top:1px}
+.nav-book{background:var(--teal);color:#fff;padding:8px 18px;font-family:var(--sans);font-size:11px;font-weight:600;text-decoration:none;letter-spacing:2px;text-transform:uppercase;border-radius:30px;transition:all .3s}
+.nav-book:hover{background:var(--teal2)}
+
+/* HERO */
+.hero{padding:100px 20px 56px;background:var(--cream);text-align:center;position:relative;overflow:hidden}
+.hero-circle{position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(45,125,125,.06);border-radius:50%}
+.hero-circle2{position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:rgba(200,169,110,.08);border-radius:50%}
+.hero-content{position:relative;z-index:2}
+.hero-new{display:inline-flex;align-items:center;gap:8px;background:rgba(45,125,125,.1);color:var(--teal);padding:6px 16px;border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.hero-title{font-family:var(--serif);font-size:52px;line-height:.95;color:var(--dark);margin-bottom:12px;font-style:italic}
+.hero-title span{color:var(--teal);display:block}
+.hero-owner{font-size:13px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;font-weight:500}
+.hero-sub{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px;max-width:380px;margin-left:auto;margin-right:auto;font-weight:300}
+.hero-cta{display:flex;flex-direction:column;gap:10px;max-width:280px;margin:0 auto}
+.btn-main{background:var(--teal);color:#fff;padding:14px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:block;text-align:center;border-radius:30px;transition:all .3s}
+.btn-main:hover{background:var(--teal2)}
+.btn-ghost{border:1.5px solid var(--teal);color:var(--teal);padding:12px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:block;text-align:center;border-radius:30px;transition:all .3s}
+.btn-ghost:hover{background:var(--teal);color:#fff}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:1fr 1fr;background:var(--teal);margin-top:40px}
+.stat{padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15)}
+.stat:nth-child(even){border-right:none}
+.stat-num{font-family:var(--serif);font-size:32px;color:#fff;display:block;font-weight:700;line-height:1;font-style:italic}
+.stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:4px;display:block;font-weight:500}
+
+/* SERVICES */
+.services{padding:56px 20px;background:var(--blush)}
+.sec-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;font-weight:600}
+.sec-title{font-family:var(--serif);font-size:38px;color:var(--dark);font-style:italic;line-height:1;margin-bottom:32px}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.svc-card{background:var(--cream);padding:22px;border-radius:16px;display:flex;align-items:flex-start;gap:14px;transition:transform .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.svc-card:hover{transform:translateY(-2px)}
+.svc-emoji{font-size:28px;flex-shrink:0;margin-top:2px}
+.svc-name{font-family:var(--serif);font-size:18px;color:var(--dark);font-style:italic;margin-bottom:4px}
+.svc-desc{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* STORY */
+.story{padding:56px 20px;background:var(--cream)}
+.story img{width:100%;height:240px;object-fit:cover;border-radius:20px;margin-bottom:28px}
+.story-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;font-weight:600}
+.story-title{font-family:var(--serif);font-size:34px;color:var(--dark);font-style:italic;line-height:1.05;margin-bottom:8px}
+.story-rule{width:28px;height:2px;background:var(--teal);margin:14px 0 18px;border-radius:2px}
+.story p{color:var(--muted);line-height:1.9;font-size:14px;margin-bottom:14px;font-weight:300}
+.story-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.badge{background:var(--blush);border:1px solid rgba(45,125,125,.2);color:var(--teal);padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.5px}
+
+/* REVIEWS */
+.reviews{padding:56px 20px;background:var(--blush)}
+.rev-header{text-align:center;margin-bottom:28px}
+.rev-num{font-family:var(--serif);font-size:60px;color:var(--teal);display:block;line-height:1;font-style:italic;font-weight:700}
+.rev-stars{color:var(--sand);font-size:20px;letter-spacing:3px;margin:6px 0}
+.rev-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.rev-grid{display:flex;flex-direction:column;gap:12px}
+.rev-card{background:var(--cream);padding:22px;border-radius:16px;border-left:3px solid var(--teal)}
+.rev-text{font-family:var(--serif);font-size:15px;color:var(--dark);line-height:1.8;font-style:italic;margin-bottom:12px}
+.rev-author{font-size:11px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+
+/* CONTACT */
+.contact{padding:56px 20px;background:var(--dark)}
+.contact-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--teal2);margin-bottom:10px;font-weight:600}
+.contact-title{font-family:var(--serif);font-size:34px;color:#fff;font-style:italic;line-height:1.05;margin-bottom:8px}
+.contact-rule{width:28px;height:2px;background:var(--teal);margin:14px 0 18px;border-radius:2px}
+.contact-text{color:rgba(255,255,255,.45);font-size:14px;line-height:1.8;margin-bottom:24px;font-weight:300}
+.c-item{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.c-icon{width:36px;height:36px;background:rgba(45,125,125,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.c-info strong{color:#fff;display:block;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.c-info a,.c-info span{color:rgba(255,255,255,.45);font-size:13px;text-decoration:none}
+.c-info a:hover{color:var(--teal2)}
+.social-box{background:rgba(45,125,125,.15);border:1px solid rgba(45,125,125,.3);padding:24px;border-radius:16px;margin-top:24px;text-align:center}
+.social-title{font-family:var(--serif);font-size:20px;color:#fff;font-style:italic;margin-bottom:6px}
+.social-sub{color:rgba(255,255,255,.4);font-size:13px;margin-bottom:16px;line-height:1.6;font-weight:300}
+.social-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.social-btn{border:1px solid var(--teal2);color:var(--teal2);padding:10px 20px;border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.social-btn:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+
+/* FOOTER */
+footer{background:var(--dark);padding:24px 20px;border-top:1px solid rgba(45,125,125,.2);text-align:center}
+.footer-logo{font-family:var(--serif);font-size:20px;color:#fff;font-style:italic}
+.footer-logo span{color:var(--teal2)}
+.footer-sub{font-size:9px;color:rgba(255,255,255,.25);margin:4px 0 8px;letter-spacing:3px;text-transform:uppercase}
+.footer-info{color:rgba(255,255,255,.3);font-size:12px;line-height:1.9}
+
+/* DESKTOP */
+@media(min-width:768px){
+  nav{padding:16px 60px}
+  .hero{padding:120px 60px 80px;text-align:left}
+  .hero-circle{top:-150px;right:-50px;width:600px;height:600px}
+  .hero-sub{margin-left:0;max-width:440px}
+  .hero-cta{flex-direction:row;max-width:none}
+  .btn-main,.btn-ghost{width:auto;display:inline-block;padding-left:32px;padding-right:32px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .stat{border-bottom:none}
+  .stat:nth-child(even){border-right:1px solid rgba(255,255,255,.15)}
+  .services{padding:100px 60px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .story{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .story img{height:500px;margin-bottom:0}
+  .reviews{padding:100px 60px}
+  .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex-direction:unset}
+  .contact{padding:100px 60px}
+  footer{padding:32px 60px;display:flex;justify-content:space-between;align-items:center;text-align:left}
+  .footer-sub{margin:3px 0 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Opal Outskirts<small>Salon · Salmon, Idaho</small></a>
+  <a href="#contact" class="nav-book">Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-circle"></div>
+  <div class="hero-circle2"></div>
+  <div class="hero-content">
+    <div class="hero-new">✨ New Salon — Opened January 2025</div>
+    <h1 class="hero-title">Opal<span>Outskirts</span></h1>
+    <p class="hero-owner">✦ By Karissa Barney · Salmon, Idaho ✦</p>
+    <p class="hero-sub">A personalized hair experience in the heart of Salmon — where every client is seen, heard and leaves feeling their most beautiful self.</p>
+    <div class="hero-cta">
+      <a href="https://www.instagram.com/opal_outskirts_salon/" target="_blank" class="btn-main">📸 Book via Instagram</a>
+      <a href="#contact" class="btn-ghost">Find Us →</a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="stat-num">5.0★</span><span class="stat-label">Star Rating</span></div>
+    <div class="stat"><span class="stat-num">14</span><span class="stat-label">Happy Clients</span></div>
+    <div class="stat"><span class="stat-num">✅</span><span class="stat-label">Licensed</span></div>
+    <div class="stat"><span class="stat-num">2025</span><span class="stat-label">Est. Salmon</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <p class="sec-tag">Services</p>
+  <h2 class="sec-title">What Karissa Offers</h2>
+  <div class="svc-grid">
+    <div class="svc-card"><span class="svc-emoji">✂️</span><div><div class="svc-name">Haircuts & Styling</div><p class="svc-desc">Precision cuts for all hair types — women, men and children. Every cut is tailored to your face shape and lifestyle.</p></div></div>
+    <div class="svc-card"><span class="svc-emoji">🎨</span><div><div class="svc-name">Colour & Highlights</div><p class="svc-desc">Balayage, highlights, full colour and toning — Karissa's colour work is precise, beautiful and long-lasting.</p></div></div>
+    <div class="svc-card"><span class="svc-emoji">💆</span><div><div class="svc-name">Hair Treatments</div><p class="svc-desc">Deep conditioning, smoothing treatments and repair services to keep your hair healthy and radiant.</p></div></div>
+    <div class="svc-card"><span class="svc-emoji">💍</span><div><div class="svc-name">Bridal & Events</div><p class="svc-desc">Special occasion styling for weddings, proms and events. Look and feel your absolute best on your big day.</p></div></div>
+  </div>
+</section>
+
+<section class="story" id="about">
+  <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Opal Outskirts Salon">
+  <div>
+    <p class="story-tag">About Karissa</p>
+    <h2 class="story-title">Born & Raised in Salmon — Finally Home</h2>
+    <div class="story-rule"></div>
+    <p>Karissa Barney grew up in Salmon, trained at Austin Kade Academy, and honed her skills at Ulta Beauty before coming back home to open Opal Outskirts Salon in January 2025.</p>
+    <p>Opal Outskirts is more than a salon — it's Karissa's love letter to Salmon. She brings big-city training and genuine small-town heart to every single client who sits in her chair.</p>
+    <p>With a perfect 5-star rating from her very first clients, Karissa is already making her mark on Salmon's beauty scene. Follow her on Instagram to see her latest work!</p>
+    <div class="story-badges">
+      <div class="badge">✨ Opened Jan 2025</div>
+      <div class="badge">🎓 Austin Kade Academy</div>
+      <div class="badge">💄 Former Ulta Beauty</div>
+      <div class="badge">⭐ 5.0 Stars</div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="rev-header">
+    <span class="rev-num">5.0</span>
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-label">Perfect Rating from Day One</div>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <p class="rev-text">"Karissa is incredibly talented — she listened to exactly what I wanted and delivered beyond my expectations. So happy to have her back in Salmon!"</p>
+      <div class="rev-author">Google Review · Salmon, Idaho</div>
+    </div>
+    <div class="rev-card">
+      <p class="rev-text">"The salon is beautiful and Karissa's work is stunning. You can tell she genuinely loves what she does. Booked again before I even left!"</p>
+      <div class="rev-author">Google Review · Salmon, Idaho</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="contact-tag">Get In Touch</p>
+  <h2 class="contact-title">Book with Karissa</h2>
+  <div class="contact-rule"></div>
+  <p class="contact-text">The easiest way to book is through Instagram DM or Facebook — Karissa responds quickly and will find a time that works for you!</p>
+  <div class="c-item"><div class="c-icon">📍</div><div class="c-info"><strong>Address</strong><span>2715 E Main St, Salmon, ID 83467</span></div></div>
+  <div class="c-item"><div class="c-icon">📸</div><div class="c-info"><strong>Instagram</strong><a href="https://www.instagram.com/opal_outskirts_salon/" target="_blank">@opal_outskirts_salon</a></div></div>
+  <div class="c-item"><div class="c-icon">📘</div><div class="c-info"><strong>Facebook</strong><a href="https://www.facebook.com/p/Opal-Outskirts-Salon-61585816742666/" target="_blank">Opal Outskirts Salon</a></div></div>
+  <div class="c-item"><div class="c-icon">🕐</div><div class="c-info"><strong>Booking</strong><span>By appointment — DM to book!</span></div></div>
+  <div class="social-box">
+    <div class="social-title">Follow Karissa's Work ✨</div>
+    <div class="social-sub">See colour transformations, cuts and styling on Instagram — the best way to book and stay updated!</div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/opal_outskirts_salon/" target="_blank" class="social-btn">📸 @opal_outskirts_salon</a>
+      <a href="https://www.facebook.com/p/Opal-Outskirts-Salon-61585816742666/" target="_blank" class="social-btn">📘 Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">Opal <span>Outskirts</span></div>
+    <div class="footer-sub">Salmon, Idaho · By Karissa Barney · Est. 2025</div>
+  </div>
+  <div class="footer-info">
+    2715 E Main St, Salmon, ID 83467
+  </div>
+</footer>
+</body>
+</html>
